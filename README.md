@@ -81,7 +81,7 @@ conda install python=2.7
 pip install diffDomain
 # in this steps, requirements will be installed automatically
 ```
-## Method 3
+### Method 3
 You can use diffDomain in Docker
 
 ## Questions
