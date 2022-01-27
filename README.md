@@ -54,16 +54,40 @@ diffDomain is dependent on
 
 ## Installation
 
+You can choose one of following three methods. If you are working on Windows,  we recommend you to choose the 3rd method.
 
-Download diffDomain source package by running following command in a terminal:
+### Method 1
+
+First of all, you should have a packages manager, such as [conda](https://docs.conda.io/en/latest/miniconda.html). Then you should create a new independent environment for diffDomain, and download diffDomain source package by running following command in a terminal:
 
 ```
+conda create -n diffDomain # the name of the new environment
+conda activate diffDomain # to activate the new environment
+conda install python=2.7 
+# in this step, pip 20.1.1 should be installed automatically
+
 git clone https://github.com/Tian-Dechao/diffDomain.git
+cd diffDomain
+pip install requirements.txt
+
 ```  
-or :
+
+### Method 2
 ```
+conda create -n diffDomain # the name of the new environment
+conda activate diffDomain # to activate the new environment
+conda install python=2.7 
+# in this step, pip 20.1.1 should be installed automatically
 pip install diffDomain
+# in this steps, requirements will be installed automatically
 ```
+## Method 3
+You can use diffDomain in Docker
+
+## Questions
+
+- **AttributeError: 'function' object has no attribute 'straw'** :
+You can open the \_\_init\_\_.py of straw ( its pathway will be reported in the error, for example "/home/gum/.conda/envs/diffDomain/lib/python2.7/site-packages/straw/__ init_.py" ) and then deleted the sentence “straw = straw_module.straw”
 
 ## Get started with example usage
 
@@ -215,6 +239,7 @@ tadlist = pd.read_table('data/GSE63525_K562_Arrowhead_domainlist.txt')
 types = pydiff.classification(result_adj,tadlist)
 
 ```
+
 
 
 # Contact information
